@@ -1,0 +1,107 @@
+priority -40
+extends ulti_python 
+
+###########################################################################
+#								  MY SNIPPETS                             #
+###########################################################################
+
+snippet printvar "print var name and itself" b
+print(`!p snip.rv = get_quoting_style(snip)`${1:${VISUAL:variable}}`!p snip.rv = get_quoting_style(snip)`)
+print($1)
+$0
+endsnippet
+snippet printcompactvar "print var name and itself" b
+print(`!p snip.rv = get_quoting_style(snip)`${1:${VISUAL:variable}} : `!p snip.rv = get_quoting_style(snip)`, $1)$0
+endsnippet
+snippet defm "class method" b
+def ${1:${VISUAL:method_name}}(self, ${2:args}):
+	${3:pass}
+$0
+endsnippet
+snippet init1 "init method" b
+def __init__(self, ${1:arg1}):
+	self.$1 = $1
+$0
+endsnippet
+snippet init2 "init method" b
+def __init__(self, ${1:arg1}, ${2:arg2}):
+	self.$1 = $1
+	self.$2 = $2
+$0
+endsnippet
+snippet init3 "init method" b
+def __init__(self, ${1:arg1}, ${2:arg2}, ${3:arg3}):
+	self.$1 = $1
+	self.$2 = $2
+	self.$3 = $3
+$0
+endsnippet
+snippet init4 "init method" b
+def __init__(self, ${1:arg1}, ${2:arg2}, ${3:arg3}, ${4:arg4}):
+	self.$1 = $1
+	self.$2 = $2
+	self.$3 = $3
+	self.$4 = $4
+$0
+endsnippet
+snippet init5 "init method" b
+def __init__(self, ${1:arg1}, ${2:arg2}, ${3:arg3}, ${4:arg4}, ${5:arg5}):
+	self.$1 = $1
+	self.$2 = $2
+	self.$3 = $3
+	self.$4 = $4
+	self.$5 = $5
+$0
+endsnippet
+snippet file_dir "dir of file path" b
+file_dir = os.path.dirname(os.path.abspath(__file__))
+$0
+endsnippet
+snippet file_to_list "file_path -> list" b
+def file_to_list(path):
+	with open(path, 'r') as input_file:
+		return input_file.readlines()
+$0
+endsnippet
+snippet json_file_to_dict  "Description" b
+def json_file_to_dict(path):
+	with open(path, 'r') as jsonFile:
+		return json.load(jsonFile)
+$0
+endsnippet
+
+snippet Returns "numpy docstring returns" b
+Returns
+-------
+${1:${VISUAL:param_name}}
+	${2:${VISUAL:description}}
+$0
+endsnippet
+
+snippet Parameters "numpy docstring param" b
+Parameters 
+----------
+${1:${VISUAL:param_name}}
+	${2:${VISUAL:description}}
+$0
+endsnippet
+
+snippet Example "numpy docstring example" b
+Example 
+-------
+>>> $0
+endsnippet
+
+snippet Notes "numpy docstring note" b
+Notes 
+-----
+$0
+endsnippet
+
+snippet importup "add parent directory to sys" b
+import os
+import sys
+
+above_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, above_dir)
+endsnippet
