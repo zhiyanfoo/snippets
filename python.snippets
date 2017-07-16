@@ -63,10 +63,25 @@ def file_to_list(path):
 		return input_file.readlines()
 $0
 endsnippet
+
+snippet read_file "file_path -> str" b
+def read_file(path):
+	with open(path, 'r') as input_file:
+		return input_file.read()
+$0
+endsnippet
+
+snippet write_file "str -> write" b
+def write_file(path, text):
+	with open(path, 'w') as output_file:
+		return output_file.write(text)
+$0
+endsnippet
+
 snippet json_file_to_dict  "Description" b
 def json_file_to_dict(path):
-	with open(path, 'r') as jsonFile:
-		return json.load(jsonFile)
+	with open(path, 'r') as json_file:
+		return json.load(json_file)
 $0
 endsnippet
 
