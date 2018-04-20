@@ -6,13 +6,14 @@ extends ulti_python
 ###########################################################################
 
 snippet printvar "print var name and itself" b
-print(`!p snip.rv = get_quoting_style(snip)`${1:${VISUAL:variable}}`!p snip.rv = get_quoting_style(snip)`)
-print($1)
+print("$1")
+print(${1:${VISUAL:variable}})
 $0
 endsnippet
 snippet printcompactvar "print var name and itself" b
-print(`!p snip.rv = get_quoting_style(snip)`${1:${VISUAL:variable}} : `!p snip.rv = get_quoting_style(snip)`, $1)$0
+print("$1: ", ${1:${VISUAL:variable}})$0
 endsnippet
+
 snippet defm "class method" b
 def ${1:${VISUAL:method_name}}(self, ${2:args}):
 	${3:pass}
