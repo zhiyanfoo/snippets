@@ -11,7 +11,8 @@ print(${1:${VISUAL:variable}})
 $0
 endsnippet
 snippet printcompactvar "print var name and itself" b
-print("$1: ", ${1:${VISUAL:variable}})$0
+print("$1: ",
+	  ${1:${VISUAL:variable}})$0
 endsnippet
 
 snippet defm "class method" b
@@ -120,4 +121,8 @@ import sys
 
 above_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, above_dir)
+endsnippet
+
+snippet breakpoint_pudb "set pudb breakpoint" b
+import pudb; pudb.set_trace()
 endsnippet
